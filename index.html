@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Water Network Project</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>My Project</title>
 
 <style>
 
@@ -13,284 +14,335 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Cairo',sans-serif;
+    font-family:Tahoma,sans-serif;
 }
 
 body{
-    background:#ced1d3;
-    color:#dc2f2f;
-}
 
-/* ================= HEADER ================= */
-
-header{
-    width:100%;
-    height:90px;
-    background:#04244d;
-    box-shadow:0 5px 20px rgba(250, 246, 246, 0.08);
+    height:100vh;
+    background:#050816;
+    color:white;
 
     display:flex;
     align-items:center;
-    justify-content:flex-start;
-
-    padding:0 60px;
-
-    position:relative;
-}
-
-.company{
-    position:absolute;
-    left:60px;
-
-    display:flex;
-    align-items:center;
-    gap:15px;
-}
-
-.title{
-    position:absolute;
-    left:50%;
-    transform:translateX(-50%);
-}
-
-/* Company */
-
-.company{
-    display:flex;
-    align-items:center;
-    gap:15px;
-}
-
-.company img{
-    width:55px;
-    height:55px;
-    object-fit:contain;
-}
-
-.company h2{
-    color:#000000;
-    font-size:22px;
-}
-
-/* Title */
-
-.title{
-    position:absolute;
-    left:50%;
-    transform:translateX(-50%);
-}
-
-.title h1{
-    font-size:34px;
-    color:#e3e8ed;
-    font-weight:700;
-}
-
-/* ================= HERO ================= */
-
-.hero{
-
-    height:calc(100vh - 90px);
-
-    display:flex;
     justify-content:center;
+
+    overflow:hidden;
+}
+
+
+/* خلفية */
+
+body::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    background:#2563eb;
+
+    filter:blur(150px);
+
+    top:-150px;
+    right:-150px;
+
+}
+
+
+body::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:450px;
+    height:450px;
+
+    background:#06b6d4;
+
+    filter:blur(150px);
+
+    bottom:-150px;
+    left:-150px;
+
+}
+
+
+
+/* الكارت الرئيسي */
+
+.container{
+
+    width:85%;
+    max-width:1000px;
+
+    padding:50px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:35px;
+
+    display:flex;
+
+    justify-content:space-between;
+
     align-items:center;
-    text-align:center;
 
-    padding:40px;
-}
-
-.box{
-
-    width:850px;
-    background:#fbfcfd;
-    padding:60px;
-
-    border-radius:20px;
-
-    box-shadow:0 10px 35px rgba(93, 47, 47, 0.08);
+    animation:show 1s ease;
 
 }
 
-.box h2{
 
-    font-size:38px;
-    color:#0b4ea2;
+
+.text{
+
+    max-width:500px;
+
+}
+
+
+h1{
+
+    font-size:60px;
+
     margin-bottom:20px;
 
 }
 
-.line{
 
-    width:90px;
-    height:5px;
-    background:#006ef4;
+h1 span{
 
-    margin:0 auto 35px;
-
-    border-radius:50px;
+    color:#38bdf8;
 
 }
 
-.box p{
 
-    font-size:20px;
-    line-height:2;
 
-    color:#060505;
+p{
 
-    margin-bottom:45px;
+    color:#b7c0d1;
+
+    font-size:18px;
+
+    line-height:1.8;
 
 }
 
-.btn{
 
-    display:inline-block;
 
-    text-decoration:none;
+/* الزر */
 
-    background:#0b4ea2;
+button{
 
-    color:#fff;
+    margin-top:30px;
 
-    padding:16px 45px;
+    padding:15px 40px;
+
+    border:none;
 
     border-radius:50px;
 
-    font-size:20px;
+    background:#2563eb;
+
+    color:white;
+
+    font-size:17px;
+
+    cursor:pointer;
 
     transition:.3s;
 
 }
 
-.btn:hover{
 
-    background:#083977;
 
-    transform:translateY(-3px);
+button:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 0 30px #2563eb;
 
 }
 
-/* ================= FOOTER ================= */
 
-footer{
+
+a{
+
+    text-decoration:none;
+
+}
+
+
+
+/* مربع الصورة المتحرك */
+
+
+.shape{
+
+    width:260px;
+
+    height:260px;
+
+    border-radius:40px;
+
+    overflow:hidden;
+
+    transform:rotate(15deg);
+
+    box-shadow:0 0 80px #2563eb;
+
+    animation:move 4s infinite;
+
+    background:#2563eb;
+
+}
+
+
+
+.shape img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+
+
+
+@keyframes move{
+
+    50%{
+
+        transform:rotate(15deg) translateY(-25px);
+
+    }
+
+}
+
+
+
+@keyframes show{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+
+
+
+@media(max-width:800px){
+
+
+.container{
+
+    flex-direction:column;
 
     text-align:center;
 
-    padding:25px;
-
-    background:#fff;
-
-    color:#777;
-
-    box-shadow:0 -5px 20px rgba(0,0,0,.05);
+    gap:40px;
 
 }
 
-@media(max-width:900px){
 
-header{
+h1{
 
-padding:20px;
-
-height:auto;
-
-flex-direction:column;
-
-gap:15px;
+    font-size:40px;
 
 }
 
-.title{
 
-position:static;
+.shape{
 
-transform:none;
+    width:220px;
 
-}
-
-.hero{
-
-height:auto;
-
-padding:40px 20px;
+    height:220px;
 
 }
 
-.box{
-
-width:100%;
-
-padding:35px;
 
 }
 
-.box h2{
-
-font-size:28px;
-
-}
-
-.box p{
-
-font-size:18px;
-
-}
-
-}
 
 </style>
 
+
 </head>
+
+
 <body>
 
-<header>
 
-<div class="company">
+<div class="container">
 
-<img src="المصرية الكويتية.png" alt="Logo">
 
-<!-- <h2>Egyptian Kuwaiti Company</h2> -->
+<div class="text">
 
-</div>
 
-<div class="title">
+<h1>
 
-<h1>Egyptian Kuwaiti Company</h1>
+New <span>Minya City</span>
 
-</div>
+</h1>
 
-</header>
-
-<section class="hero">
-
-<div class="box">
-
-<h2>New Minya City Utilities Networks</h2>
-
-<div class="line"></div>
 
 <p>
 
-This project presents an interactive Geographic Information System
-designed to manage and monitor infrastructure networks with a modern
-web interface. Click the button below to open the project.
+Displaying descriptive and spatial data for city infrastructure facilities
 
 </p>
 
-<a href="https://www.arcgis.com/apps/instant/basic/index.html?appid=b0161258983e4e3a9d4144130f843a77" class="btn" target="_blank">
-Open Project
+
+
+<a href="https://www.arcgis.com/apps/instant/basic/index.html?appid=b0161258983e4e3a9d4144130f843a77">
+
+<button>
+
+View Project
+
+</button>
+
 </a>
+
+
 
 </div>
 
-</section>
 
-<footer>
 
-© 2026 Egyptian Kuwaiti Company. All Rights Reserved.
+<div class="shape">
 
-</footer>
+<img src="المصرية الكويتية.png">
+
+</div>
+
+
+
+</div>
+
+
 
 </body>
+
 </html>
